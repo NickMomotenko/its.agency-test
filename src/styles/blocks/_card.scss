@@ -1,0 +1,41 @@
+.card {
+  &__img {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__title {
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    color: #1f2020;
+    margin-bottom: 24px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__price {
+    &-value {
+      font-weight: 600;
+      font-size: 16px;
+
+      color: #1f2020;
+    }
+  }
+
+  &__button {
+    &-add {
+      display: inline-block;
+      width: 80px;
+      height: 32px;
+
+      background: #7bb899;
+      border-radius: 8px;
+    }
+  }
+}

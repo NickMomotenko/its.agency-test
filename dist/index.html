@@ -6,41 +6,303 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="main.min.css" />
-    <title>Test Server</title>
+    <title>Colors - Краски</title>
   </head>
 
   <body>
     <div class="wrapper">
       <header class="header">
-        <div class="logo">
-          <a href="#" class="logo__link">
-            <img src="" alt="Logo Colors" class="logo__img" />
-          </a>
+        <div class="header__logo">
+          <div class="logo">
+            <a href="#" class="logo__link">
+              <img src="./img/logo.png" alt="Logo Colors" class="logo__img" />
+            </a>
+          </div>
         </div>
-        <nav class="menu">
-          <ul class="menu__list">
-            <li class="menu__item">
-              <a href="#" class="menu__link">Продукты</a>
+        <div class="header__menu">
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a href="#" class="menu__link">Продукты</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Цвета</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Вдохновение</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Советы</a>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="menu__link">Найти магазин</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="phones">
+          <a href="tel:+7 (495) 221-77-69" class="phones__link"
+            ><span class="phones__link-number">+7 (495) 221-77-69</span>
+            <span class="phones__link-text">Заказать звонок</span></a
+          >
+        </div>
+        <div class="header__options">
+          <button class="button button--icon">
+            <img src="./img/search.svg" alt="icon search" class="icon" />
+          </button>
+          <button class="button button--icon">
+            <img src="./img/profile.svg" alt="icon search" class="icon" />
+          </button>
+          <button class="button button--icon">
+            <img src="./img/heart.svg" alt="icon search" class="icon" />
+          </button>
+          <button class="basket-counter">
+            <span>4</span>
+          </button>
+        </div>
+      </header>
+      <main class="main">
+        <div class="breadcrumbs">
+          <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Главная</a>
             </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Цвета</a>
+            <li class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Продукты</a>
             </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Вдохновение</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Продукты</a>
-            </li>
-            <li class="menu__item">
-              <a href="#" class="menu__link">Продукты</a>
+            <li class="breadcrumbs__item">
+              <a href="#" class="breadcrumbs__link">Краски</a>
             </li>
           </ul>
-        </nav>
-      </header>
+        </div>
+        <div class="slider" style="background: url(./img/slider-bg.png)">
+          <div class="slider__container">
+            <ul class="slider__list">
+              <li class="slider__item">
+                <div class="slider__content">
+                  <div class="slider__title">Краски</div>
+                  <div class="slider__text">
+                    Идеально подходят для стен и других поверхностей. Найди свой
+                    идеальный цвет!
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item">
+                <div class="slider__content">
+                  <div class="slider__title">Краски</div>
+                  <div class="slider__text">
+                    Идеально подходят для стен и других поверхностей. Найди свой
+                    идеальный цвет!
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item">
+                <div class="slider__content">
+                  <div class="slider__title">Краски</div>
+                  <div class="slider__text">
+                    Идеально подходят для стен и других поверхностей. Найди свой
+                    идеальный цвет!
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item">
+                <div class="slider__content">
+                  <div class="slider__title">Краски</div>
+                  <div class="slider__text">
+                    Идеально подходят для стен и других поверхностей. Найди свой
+                    идеальный цвет!
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item">
+                <div class="slider__content">
+                  <div class="slider__title">Краски</div>
+                  <div class="slider__text">
+                    Идеально подходят для стен и других поверхностей. Найди свой
+                    идеальный цвет!
+                  </div>
+                </div>
+              </li>
+              <li class="slider__item">
+                <div class="slider__content">
+                  <div class="slider__title">Краски</div>
+                  <div class="slider__text">
+                    Идеально подходят для стен и других поверхностей. Найди свой
+                    идеальный цвет!
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="slider__controlls">
+            <ul class="slider__controlls-list">
+              <li class="slider__controlls-item">
+                <button class="slider__controlls-btn"></button>
+              </li>
+              <li class="slider__controlls-item">
+                <button class="slider__controlls-btn"></button>
+              </li>
+              <li class="slider__controlls-item">
+                <button class="slider__controlls-btn"></button>
+              </li>
+              <li class="slider__controlls-item">
+                <button class="slider__controlls-btn"></button>
+              </li>
+              <li class="slider__controlls-item">
+                <button class="slider__controlls-btn"></button>
+              </li>
+              <li class="slider__controlls-item">
+                <button class="slider__controlls-btn"></button>
+              </li>
+            </ul>
+          </div>
+          <div class="slider__direction">
+            <button
+              class="slider__direction-btn slider__direction-btn--prev"
+            ></button>
+            <button
+              class="slider__direction-btn slider__direction-btn--next"
+            ></button>
+          </div>
+        </div>
+        <div class="main__content">
+          <div class="main__col">
+            <div class="filter-list">
+              <ul class="filter-list__options">
+                <li class="filter-list__item">
+                  <div class="filter-list__checkbox">
+                    <div class="checkbox">
+                      <label class="checkbox__label">
+                        <input type="checkbox" class="checkbox__body" />
+                        <div class="checkbox__fake"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-list__title">Новинки</div>
+                </li>
+                <li class="filter-list__item">
+                  <div class="filter-list__checkbox">
+                    <div class="checkbox">
+                      <label class="checkbox__label">
+                        <input type="checkbox" class="checkbox__body" />
+                        <div class="checkbox__fake"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-list__title">Есть в наличии</div>
+                </li>
+                <li class="filter-list__item">
+                  <div class="filter-list__checkbox">
+                    <div class="checkbox">
+                      <label class="checkbox__label">
+                        <input type="checkbox" class="checkbox__body" />
+                        <div class="checkbox__fake"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-list__title">Контрактные</div>
+                </li>
+                <li class="filter-list__item">
+                  <div class="filter-list__checkbox">
+                    <div class="checkbox">
+                      <label class="checkbox__label">
+                        <input type="checkbox" class="checkbox__body" />
+                        <div class="checkbox__fake"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-list__title">Эксклюзивные</div>
+                </li>
+                <li class="filter-list__item">
+                  <div class="filter-list__checkbox">
+                    <div class="checkbox">
+                      <label class="checkbox__label">
+                        <input type="checkbox" class="checkbox__body" />
+                        <div class="checkbox__fake"></div>
+                      </label>
+                    </div>
+                  </div>
+                  <div class="filter-list__title">Распродажа</div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="main__col">
+            <div class="select">
+              <div class="select__preview">Сначала дорогие</div>
+              <ul class="select__list">
+                <li class="select__item">
+                  <button class="select__btn">
+                    <span> Сначала дорогие </span>
+                  </button>
+                </li>
+                <li class="select__item">
+                  <button class="select__btn">
+                    <span>Сначала недорогие</span>
+                  </button>
+                </li>
+                <li class="select__item">
+                  <button class="select__btn">
+                    <span>Сначала популярные</span>
+                  </button>
+                </li>
+                <li class="select__item">
+                  <button class="select__btn">
+                    <span>Сначала новые</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
+            <div class="product">
+              <ul class="product__list">
+                <li class="product__item card">
+                  <div class="card__img">
+                    <img
+                      src="./img/products/1.png"
+                      alt=""
+                      class="card__img-picture"
+                    />
+                  </div>
+                  <div class="card__title">
+                    Краска Wallquest, Brownsone MS90102
+                  </div>
+                  <div class="card__row">
+                    <div class="card__price">
+                      <span class="card__price-value">6000</span>
+                      <span class="card__price-currency">₽</span>
+                    </div>
+                    <button class="card__button-add">
+                      <img src="./img/plus.svg" alt="plus icon" />
+                    </button>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div class="basket">
+      <div class="basket__content">
+        <div class="basket__head"><h2 class="basket__title">Корзина</h2></div>
+        <div class="basket__bottom">
+          <div class="basket__order">
+            <div class="basket__total">
+              <span class="basket__total-text">Итого</span>
+              <span class="basket__total-price">14 400 р</span>
+            </div>
+            <div class="basket__order-button">Оформить заказ</div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <script src="./js/index.js"></script>
+    <script src="./js/slider.js"></script>
   </body>
 </html>

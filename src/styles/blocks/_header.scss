@@ -1,0 +1,26 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 39px 0;
+
+  &__logo {
+    margin-right: 171px;
+  }
+
+  &__menu {
+    margin-top: 4px;
+  }
+
+  &__options {
+    display: flex;
+    align-items: center;
+
+    button {
+      margin-right: 19px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}

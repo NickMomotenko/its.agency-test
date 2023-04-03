@@ -1,0 +1,26 @@
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__link {
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1f2020;
+
+    transition: color 0.4s;
+
+    &:hover {
+      color: #85c3c3;
+    }
+  }
+}

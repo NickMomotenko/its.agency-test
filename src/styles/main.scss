@@ -1,5 +1,7 @@
 * {
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  line-height: 0;
 }
 
 body,
@@ -7,6 +9,9 @@ html {
   height: 100%;
   width: 100%;
   margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  overflow-x: hidden;
 }
 
 button {
@@ -51,7 +56,8 @@ input {
 .wrapper {
   height: 100%;
   width: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden;
+  background: #fff;
 }
 
 .container {

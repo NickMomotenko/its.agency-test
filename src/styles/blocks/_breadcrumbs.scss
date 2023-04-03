@@ -1,0 +1,39 @@
+.breadcrumbs {
+  &__list {
+    display: flex;
+    align-items: center;
+  }
+
+  &__item {
+    margin-right: 8px;
+
+    &::after {
+      $size: 3px;
+      content: "";
+      display: inline-block;
+      height: $size;
+      width: $size;
+
+      background: #747f7b;
+      border-radius: 50%;
+
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__link {
+    font-size: 10px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #747f7b;
+  }
+}

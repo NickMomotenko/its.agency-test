@@ -1,0 +1,19 @@
+.filter-list {
+  &__item {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1f2020;
+    margin-left: 12px;
+  }
+}
