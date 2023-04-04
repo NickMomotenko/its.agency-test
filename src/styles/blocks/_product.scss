@@ -11,12 +11,14 @@
 
   &__list {
     display: flex;
+    flex-wrap: wrap;
   }
 
   &__item {
     padding-bottom: 22px;
     border-bottom: 1px solid #e6e6e6;
     margin-right: 24px;
+    width: calc(100% / 5 - 24px);
 
     &:last-child {
       margin-right: 0;

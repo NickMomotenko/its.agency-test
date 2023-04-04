@@ -11,8 +11,9 @@
   }
 
   &__col {
-    &:last-child {
-      margin-left: 144px;
+    &--full {
+      flex: 1;
+      margin-left: 137px;
     }
   }
 }
