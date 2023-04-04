@@ -2,6 +2,9 @@
   height: 560px;
   position: relative;
 
+  background-repeat: no-repeat;
+  background-size: cover;
+
   &__container {
     height: 100%;
     transition: transform .5s;

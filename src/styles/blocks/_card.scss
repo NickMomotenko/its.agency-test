@@ -1,7 +1,14 @@
 .card {
+  &:hover {
+    .card__button-add {
+      visibility: visible;
+    }
+  }
+
   &__img {
     display: flex;
     justify-content: center;
+    margin-bottom: 57px;
   }
 
   &__title {
@@ -10,7 +17,7 @@
     line-height: 18px;
     letter-spacing: 0.02em;
     color: #1f2020;
-    margin-bottom: 24px;
+    margin-bottom: 17px;
   }
 
   &__row {
@@ -36,6 +43,8 @@
 
       background: #7bb899;
       border-radius: 8px;
+
+      visibility: hidden;
     }
   }
 }

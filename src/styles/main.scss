@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
-  line-height: 0;
+  line-height: 100%;
 }
 
 body,
@@ -61,8 +61,14 @@ input {
 }
 
 .container {
-  width: 1224px;
-  margin: 0 auto;
+  padding: 0 64px;
+  max-width: 1920px;
+  width: 100%;
+
+  &--product {
+    display: flex;
+    padding: 0 27px 0 64px;
+  }
 }
 
 @import "./blocks/*.scss";

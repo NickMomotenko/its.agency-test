@@ -1,6 +1,25 @@
 .product {
+  margin-top: 81px;
+
+  &-counter {
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1f2020;
+  }
+
+  &__list {
+    display: flex;
+  }
+
   &__item {
     padding-bottom: 22px;
     border-bottom: 1px solid #e6e6e6;
+    margin-right: 24px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

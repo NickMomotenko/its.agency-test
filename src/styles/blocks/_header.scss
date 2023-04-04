@@ -1,7 +1,24 @@
 .header {
-  display: flex;
-  align-items: center;
-  padding: 39px 0;
+  padding: 38px 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 31px 0 64px;
+  }
+
+  &__col {
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    &--right {
+      justify-content: flex-end;
+      margin-top: 3px;
+    }
+  }
 
   &__logo {
     margin-right: 171px;
@@ -11,12 +28,16 @@
     margin-top: 4px;
   }
 
+  &__phones {
+    margin-right: 115px;
+  }
+
   &__options {
     display: flex;
     align-items: center;
 
     button {
-      margin-right: 19px;
+      margin-right: 24px;
 
       &:last-child {
         margin-right: 0;

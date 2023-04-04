@@ -1,4 +1,18 @@
 .basket {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  height: 100%;
+  right: -100%;
+  width: 600px;
+  background: #fff;
+  transition: right 0.5s;
+  padding: 28px 40px;
+
+  &.active {
+    right: 0;
+  }
+
   &-counter {
     $size: 24px;
     height: $size;
@@ -7,7 +21,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background: #7BB899;
+    background: #7bb899;
 
     span {
       font-weight: 500;
@@ -15,6 +29,148 @@
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: #1f2020;
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 84px;
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 26px;
+    letter-spacing: -0.04em;
+    color: #1f2020;
+  }
+
+  &__cross-btn {
+    $size: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: $size;
+    width: $size;
+    border-radius: 50%;
+    border: 1px solid #e6e6e6;
+
+    &:before {
+      $size: 12px;
+      content: "";
+      display: inline-block;
+      background: url(../../img/cross.svg);
+      background-size: contain;
+      height: $size;
+      width: $size;
+    }
+  }
+
+  &__order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__order-btn {
+    display: inline-block;
+    background: #7bb899;
+    border-radius: 4px;
+
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1f2020;
+    max-width: 240px;
+    width: 100%;
+    padding: 20px 5px;
+  }
+
+  &__total {
+    &-text {
+      font-size: 16px;
+      color: #1f2020;
+      margin-bottom: 6px;
+    }
+
+    &-price {
+      font-weight: 500;
+      font-size: 30px;
+      letter-spacing: -0.02em;
+      color: #1f2020;
+    }
+  }
+
+  &__list {
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 11px;
+      margin-bottom: 5px;
+    }
+
+    &-data {
+      margin-top: 13px;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid black;
+      padding-bottom: 20px;
+    }
+
+    &-icon {
+      $size: 96px;
+      height: $size;
+      width: $size;
+      margin-right: 10px;
+    }
+
+    &-title {
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 18px;
+      letter-spacing: 0.02em;
+      color: #1f2020;
+      margin-bottom: 16px;
+      width: 54%;
+    }
+
+    &-price {
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 16px;
+      color: #1f2020;
+    }
+
+    &-counter {
+      display: flex;
+      align-items: center;
+      margin-right: 37px;
+
+      &-value {
+        font-size: 16px;
+        line-height: 100%;
+        color: #1f2020;
+        margin: 0 18px;
+      }
+
+      &-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 24px;
+        width: 40px;
+        background: #f2f2f2;
+        border-radius: 4px;
+      }
     }
   }
 }

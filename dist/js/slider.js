@@ -54,10 +54,6 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     sliderArr[0].classList.add("active");
-
-    for (const slide of sliderArr) {
-        
-    }
     optionList[0].classList.add("active");
   });
 

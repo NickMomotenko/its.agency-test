@@ -1,5 +1,18 @@
 .main {
   &__content {
     display: flex;
+    margin-top: 72px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__col {
+    &:last-child {
+      margin-left: 144px;
+    }
   }
 }
