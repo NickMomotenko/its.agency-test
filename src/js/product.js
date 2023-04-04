@@ -1,48 +1,15 @@
-(() => {
-  const data = [
-    {
-      id: 1,
-      image: "../img/products/1.png",
-      title: "Краска Wallquest, Brownsone MS90102",
-      price: "6000",
-    },
-    {
-      id: 2,
-      image: "../img/products/2.png",
-      title: "Краска Wallquest 2222, Brownsone MS90102",
-      price: "4444",
-    },
-    {
-      id: 3,
-      image: "../img/products/1.png",
-      title: "Краска Wallquest, Brownsone MS90102",
-      price: "6000",
-    },
-    {
-      id: 4,
-      image: "../img/products/2.png",
-      title: "Краска Wallquest 2222, Brownsone MS90102",
-      price: "4444",
-    },
-    {
-      id: 5,
-      image: "../img/products/1.png",
-      title: "Краска Wallquest, Brownsone MS90102",
-      price: "6000",
-    },
-  ];
+import { data } from "./mockData.js";
 
-  let busketList = [];
+let busketList = [];
 
-  const productContainer = document.querySelector(".product__list");
-  const busketCounter =
-    document.querySelector(".basket-counter").firstElementChild;
+const productContainer = document.querySelector(".product__list");
+const busketCounter = Array.from(document.querySelectorAll(".counter-value"));
 
-  const generateProductList = () => {
-    let listStr = "";
+const generateProductList = () => {
+  let listStr = "";
 
-    for (const item of data) {
-      listStr += `
+  for (const item of data) {
+    listStr += `
           <li class="product__item card" data-id=${item.id}>
               <div class="card__img">
                   <img
@@ -65,64 +32,112 @@
               </div>
           </li>
         `;
-    }
+  }
 
-    productContainer.innerHTML = listStr;
-  };
+  productContainer.innerHTML = listStr;
+};
 
-  generateProductList();
+generateProductList();
 
-  const productList = document.querySelector(".product__list");
+const productList = document.querySelector(".product__list");
 
-  productList.addEventListener("click", (event) => {
-    const target = event.target;
+function getBusketGeneralCounter() {
+  let counter = busketList.reduce(
+    (accumulator, item) => accumulator + item.counter,
+    0
+  );
 
-    if (
-      target.classList.contains("card__button-add") ||
-      target.classList.contains("card__button-add-icon")
-    ) {
-      const parentLI = target.closest(".card");
+  return counter;
+}
 
-      const id = parentLI.dataset.id;
-      const imgUrl = parentLI.querySelector(".card__img-picture").src;
-      const title = parentLI.querySelector(".card__title").textContent;
-      const price = parentLI.querySelector(".card__price");
+function updateBasketData(arg) {
+  let isObj = typeof arg === "object";
 
-      const priceCurrency = price.querySelector(
-        ".card__price-currency"
-      ).textContent;
-      const priceValue = price.querySelector(".card__price-value").textContent;
+  if (!isObj) {
+    let product = busketList.find((item) => item.id === arg);
 
-      const product = {
-        id,
-        icon: imgUrl,
-        title,
-        price: {
-          value: priceValue,
-          currency: priceCurrency,
-        },
-        counter: 1,
-      };
-
-      if (busketList.some((item) => item.id === product.id)) {
-        busketList = busketList.map((item) => {
-          if (item.id === product.id) {
-            return { ...item, counter: item.counter + 1 };
-          }
-
-          return item;
-        });
-      } else {
-        busketList = [...busketList, product];
+    busketList = busketList.map((item) => {
+      if (item.id === product.id) {
+        return { ...item, counter: item.counter + 1 };
       }
 
-      let busketListGeneralCounter = busketList.reduce(
-        (accumulator, item) => accumulator + item.counter,
-        0
-      );
+      return item;
+    });
+  } else {
+    busketList = [...busketList, arg];
+  }
+}
 
-      busketCounter.innerText = busketListGeneralCounter;
-      console.log(busketList);
+function decrementProduct(id) {
+  busketList = busketList.map((product) => {
+    if (product.id === id) {
+      if (product.counter === 1) {
+        return product;
+      }
+
+      return { ...product, counter: product.counter - 1 };
     }
+
+    return product;
   });
-})();
+}
+
+function updateBasketCounterValue() {
+  for (const counter of busketCounter) {
+    counter.innerText = getBusketGeneralCounter();
+  }
+}
+
+function clearData() {
+  busketList = [];
+  updateBasketCounterValue();
+}
+
+function deleteFromBusket(id) {
+  busketList = busketList.filter((item) => item.id !== id);
+}
+
+productList.addEventListener("click", (event) => {
+  const target = event.target;
+
+  if (
+    target.classList.contains("card__button-add") ||
+    target.classList.contains("card__button-add-icon")
+  ) {
+    const parentLI = target.closest(".card");
+
+    const id = parentLI.dataset.id;
+    const imgUrl = parentLI.querySelector(".card__img-picture").src;
+    const title = parentLI.querySelector(".card__title").textContent;
+    const price = parentLI.querySelector(".card__price");
+
+    const priceCurrency = price.querySelector(
+      ".card__price-currency"
+    ).textContent;
+    const priceValue = price.querySelector(".card__price-value").textContent;
+
+    const product = {
+      id,
+      icon: imgUrl,
+      title,
+      price: {
+        value: priceValue,
+        currency: priceCurrency,
+      },
+      counter: 1,
+    };
+
+    updateBasketData(product);
+    updateBasketCounterValue();
+  }
+});
+
+export {
+  busketList,
+  updateBasketCounterValue,
+  clearData,
+  deleteFromBusket,
+  updateBasketData,
+  decrementProduct,
+  getBusketGeneralCounter,
+};

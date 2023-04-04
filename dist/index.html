@@ -73,7 +73,7 @@
                 <img src="./img/heart.svg" alt="icon search" class="icon" />
               </button>
               <button class="basket-counter">
-                <span>0</span>
+                <span class="counter-value">0</span>
               </button>
             </div>
           </div>
@@ -93,7 +93,7 @@
             </li>
           </ul>
         </div>
-        <div class="slider" style="background-image: url(./img/slider-bg.png)">
+        <!-- <div class="slider" style="background-image: url(./img/slider-bg.png)">
           <div class="slider__container">
             <ul class="slider__list">
               <li class="slider__item">
@@ -182,7 +182,7 @@
               class="slider__direction-btn slider__direction-btn--next"
             ></button>
           </div>
-        </div>
+        </div> -->
         <div class="main__content">
           <div class="container container--product">
             <div class="main__col">
@@ -283,7 +283,7 @@
         </div>
       </main>
     </div>
-    <div class="basket active">
+    <div class="basket">
       <div class="basket__content">
         <div class="basket__head">
           <h2 class="basket__title">Корзина</h2>
@@ -291,20 +291,12 @@
         </div>
         <div class="basket__list">
           <div class="basket__list-top">
-            <div class="basket__list-counter"><span>4</span> товара</div>
+            <div class="basket__list-counter">
+              <span class="counter-value"></span> товара
+            </div>
             <div class="basket__clear-btn">Очистить список</div>
           </div>
-          <ul class="basket__list-body">
-            <!-- <li class="basket__list-item">
-              <img src="" alt="" class="basket__list-icon" />
-              <div class="basket__list-data">
-                <div class="basket__list-title">
-                  Краска Wallquest, Brownsone MS90102
-                </div>
-                <div class="basket__list-price">9000 р</div>
-              </div>
-            </li> -->
-          </ul>
+          <ul class="basket__list-body"></ul>
         </div>
         <div class="basket__bottom">
           <div class="basket__order">
@@ -318,11 +310,11 @@
       </div>
     </div>
 
-    <script src="./js/slider.js"></script>
-    <script src="./js/product.js"></script>
+    <!-- <script src="./js/slider.js"></script> -->
+    <script src="./js/product.js" type="module"></script>
 
-    <script src="./js/basket.js"></script>
+    <script src="./js/basket.js" type="module"></script>
 
-    <script src="./js/select.js"></script>
+    <script src="./js/select.js" type="module"></script>
   </body>
 </html>

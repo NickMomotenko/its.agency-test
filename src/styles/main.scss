@@ -56,8 +56,30 @@ input {
 .wrapper {
   height: 100%;
   width: 100%;
-  // overflow-x: hidden;
   background: #fff;
+
+  &.active {
+    pointer-events: none;
+
+    &:before {
+      visibility: visible;
+    }
+  }
+
+  &:before {
+    content: "";
+    transition: opacity 0.6s;
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #000000;
+    opacity: 0.7;
+    visibility: hidden;
+    z-index: 1;
+  }
 }
 
 .container {

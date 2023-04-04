@@ -39,12 +39,22 @@
     margin-bottom: 84px;
   }
 
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
   &__title {
     font-weight: 500;
     font-size: 30px;
     line-height: 26px;
     letter-spacing: -0.04em;
     color: #1f2020;
+  }
+
+  &__bottom {
+    margin-top: auto;
   }
 
   &__cross-btn {
@@ -105,6 +115,8 @@
   }
 
   &__list {
+    overflow-y: auto;
+
     &-top {
       display: flex;
       align-items: center;
@@ -112,18 +124,29 @@
 
       border-bottom: 1px solid #e6e6e6;
       padding-bottom: 11px;
-      margin-bottom: 5px;
+      // margin-bottom: 5px;
+    }
+
+    &-content {
+      display: flex;
+      align-items: center;
     }
 
     &-data {
-      margin-top: 13px;
+      margin-top: 26px;
+      width: 50%;
     }
 
     &-item {
       display: flex;
       align-items: center;
-      border-bottom: 1px solid black;
-      padding-bottom: 20px;
+      border-bottom: 1px solid #e6e6e6;
+      padding-bottom: 23px;
+      padding-right: 3px;
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
 
     &-icon {
@@ -140,7 +163,7 @@
       letter-spacing: 0.02em;
       color: #1f2020;
       margin-bottom: 16px;
-      width: 54%;
+      // width: 54%;
     }
 
     &-price {
@@ -151,10 +174,6 @@
     }
 
     &-counter {
-      display: flex;
-      align-items: center;
-      margin-right: 37px;
-
       &-value {
         font-size: 16px;
         line-height: 100%;
@@ -171,6 +190,30 @@
         background: #f2f2f2;
         border-radius: 4px;
       }
+
+      &-block {
+        display: flex;
+        align-items: center;
+        margin-right: 46px;
+      }
+    }
+
+    &-delete-btn {
+      &::before {
+        $size: 12px;
+
+        content: "";
+        display: inline-block;
+        height: $size;
+        width: $size;
+        background: url(../../img/cross-1.svg) center no-repeat;
+      }
+    }
+
+    &-options {
+      display: flex;
+      align-items: center;
+      margin-top: 23px;
     }
   }
 }
