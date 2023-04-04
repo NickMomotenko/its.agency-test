@@ -1,12 +1,15 @@
 .filter-list {
   &__item {
     margin-bottom: 10px;
-    display: flex;
-    align-items: center;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
   }
 
   &__title {

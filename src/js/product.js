@@ -1,14 +1,15 @@
 import { data } from "./mockData.js";
 
 let busketList = [];
+let productArr = [...data];
 
 const productContainer = document.querySelector(".product__list");
 const busketCounter = Array.from(document.querySelectorAll(".counter-value"));
 
-const generateProductList = () => {
+const generateProductList = (arr = productArr) => {
   let listStr = "";
 
-  for (const item of data) {
+  for (let item of arr) {
     listStr += `
           <li class="product__item card" data-id=${item.id}>
               <div class="card__img">
@@ -53,18 +54,28 @@ function getBusketGeneralCounter() {
 function updateBasketData(arg) {
   let isObj = typeof arg === "object";
 
-  if (!isObj) {
-    let product = busketList.find((item) => item.id === arg);
-
+  function update(id) {
     busketList = busketList.map((item) => {
-      if (item.id === product.id) {
+      if (item.id === id) {
         return { ...item, counter: item.counter + 1 };
       }
 
       return item;
     });
+  }
+
+  if (!isObj) {
+    let product = busketList.find((item) => item.id === arg);
+
+    update(product.id);
   } else {
-    busketList = [...busketList, arg];
+    let product = busketList.find((item) => item.id === arg.id);
+
+    if (product) {
+      update(product.id);
+    } else {
+      busketList = [...busketList, arg];
+    }
   }
 }
 
@@ -134,6 +145,8 @@ productList.addEventListener("click", (event) => {
 
 export {
   busketList,
+  productArr,
+  generateProductList,
   updateBasketCounterValue,
   clearData,
   deleteFromBusket,

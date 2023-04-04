@@ -2,6 +2,12 @@
   display: inline-block;
   position: relative;
 
+  &.active {
+    .select__list {
+      visibility: visible;
+    }
+  }
+
   &__preview {
     font-weight: 500;
     font-size: 12px;
@@ -21,32 +27,31 @@
       vertical-align: middle;
       margin-left: 5px;
     }
-
-    &:hover {
-      & + .select__list {
-        visibility: visible !important;
-      }
-    }
   }
 
   &__list {
+    $marginTop: 5px;
+
+    margin-top: $marginTop;
     display: inline-block;
-    border: 1px solid red;
     max-width: 280px;
     width: 100%;
     visibility: hidden;
     position: absolute;
     top: 100%;
+    right: 0;
     min-width: 280px;
+    box-shadow: 0 0 5px black;
 
-    &::before {
+    &:before {
       content: "";
-      height: 5px;
+      display: block;
+      height: $marginTop;
       width: 100%;
+
       position: absolute;
       bottom: 100%;
       left: 0;
-      background: red;
     }
   }
 
@@ -56,13 +61,11 @@
     width: 100%;
     text-align: left;
 
-    span {
-      font-weight: 500;
-      font-size: 12px;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #1f2020;
-    }
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #1f2020;
 
     &:hover {
       background: #7bb899;
