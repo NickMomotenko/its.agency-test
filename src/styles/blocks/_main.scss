@@ -17,3 +17,35 @@
     }
   }
 }
+
+@media screen and (max-width: 1250px) {
+  .main {
+    &__col {
+      &--full {
+        margin-left: 40px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    &__col {
+      &:first-child {
+        display: none;
+      }
+
+      &--full {
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    &__content {
+      margin-top: 0;
+    }
+  }
+}

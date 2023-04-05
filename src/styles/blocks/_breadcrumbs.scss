@@ -1,4 +1,8 @@
 .breadcrumbs {
+  &--phones {
+    display: none;
+  }
+
   &__list {
     display: flex;
     align-items: center;
@@ -35,5 +39,27 @@
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #747f7b;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .breadcrumbs {
+    display: block;
+
+    &--phones {
+      margin-bottom: 48px;
+      
+      .breadcrumbs {
+        &__link {
+          color: #bcbcbc;
+        }
+
+        &__item {
+          &::after {
+            background: #c4c4c4;
+          }
+        }
+      }
+    }
   }
 }

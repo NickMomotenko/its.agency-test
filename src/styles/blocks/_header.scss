@@ -24,6 +24,10 @@
     margin-right: 171px;
   }
 
+  &__basket-counter {
+    display: none;
+  }
+
   &__menu {
     margin-top: 4px;
   }
@@ -41,6 +45,122 @@
 
       &:last-child {
         margin-right: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1340px) {
+  .header {
+    &__logo {
+      margin-right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1220px) {
+  .header {
+    &__col {
+      &:first-child {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    &__logo {
+      margin-right: 0;
+      margin-bottom: 15px;
+    }
+
+    &__phones {
+      margin-right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .header {
+    &__menu {
+      display: none;
+    }
+
+    &__logo {
+      margin-bottom: 0;
+      margin-left: 20px;
+    }
+
+    &__col {
+      &:first-child {
+        flex-direction: row;
+        align-items: center;
+      }
+    }
+
+    .container {
+      padding: 0 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__phones {
+      .phones {
+        &__link-number {
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .header {
+    &__options {
+      .button {
+        display: none;
+      }
+    }
+
+    &__phones {
+      margin-right: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 0;
+    margin-bottom: 16px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: #f2f2f2;
+      margin: 0 25px;
+    }
+
+    .container {
+      padding: 18px 25px;
+    }
+
+    &__basket-counter {
+      display: inline-block;
+    }
+
+    &__logo {
+      margin-left: 0;
+    }
+
+    &__col {
+      &:first-child {
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      &--right {
+        display: none;
       }
     }
   }

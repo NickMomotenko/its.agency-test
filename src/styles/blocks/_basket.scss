@@ -8,6 +8,7 @@
   background: #fff;
   transition: right 0.5s;
   padding: 28px 40px;
+  display: none;
 
   &.active {
     right: 0;

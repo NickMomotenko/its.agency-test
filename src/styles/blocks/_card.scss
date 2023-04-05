@@ -48,3 +48,31 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .card {
+    &__button {
+      &-add {
+        visibility: visible;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .card {
+    &__button {
+      &-add {
+        width: 40px;
+        height: 24px;
+        background: #f2f2f2;
+        border-radius: 6px;
+
+        img {
+          height: 10px;
+          width: 10px;
+        }
+      }
+    }
+  }
+}

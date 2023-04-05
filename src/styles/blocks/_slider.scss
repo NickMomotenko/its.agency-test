@@ -129,3 +129,27 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .slider {
+    height: 400px;
+
+    &__direction {
+      width: 90%;
+    }
+
+    &__title{
+      font-size: 45px;
+    }
+
+    &__text{
+      font-size: 13px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .slider {
+    display: none;
+  }
+}

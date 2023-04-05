@@ -20,6 +20,11 @@
       <header class="header">
         <div class="container">
           <div class="header__col">
+            <div class="burger">
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+            </div>
             <div class="header__logo">
               <div class="logo">
                 <a href="#" class="logo__link">
@@ -51,6 +56,11 @@
                   </li>
                 </ul>
               </nav>
+            </div>
+            <div class="header__basket-counter">
+              <button class="basket-counter">
+                <span class="counter-value">0</span>
+              </button>
             </div>
           </div>
           <div class="header__col header__col--right">
@@ -279,8 +289,25 @@
               </div>
             </div>
             <div class="main__col main__col--full">
+              <div class="breadcrumbs breadcrumbs--phones">
+                <ul class="breadcrumbs__list">
+                  <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link">Главная</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link">Продукты</a>
+                  </li>
+                  <li class="breadcrumbs__item">
+                    <a href="#" class="breadcrumbs__link">Краски</a>
+                  </li>
+                </ul>
+              </div>
+              <h2 class="product-title">Краски</h2>
               <div class="main__row">
-                <div class="product-counter"><span>412</span> товаров</div>
+                <button class="product-counter">
+                  <span>412</span> товаров
+                </button>
+                <button class="product-filter-label">Фильтры</button>
                 <div class="select">
                   <div class="select__preview">Сначала дорогие</div>
                   <ul class="select__list">
@@ -324,9 +351,9 @@
         <div class="basket__list">
           <div class="basket__list-top">
             <div class="basket__list-counter">
-              <span class="counter-value"></span> товара
+              <span class="counter-value">0</span> товара
             </div>
-            <div class="basket__clear-btn">Очистить список</div>
+            <button class="basket__clear-btn">Очистить список</button>
           </div>
           <ul class="basket__list-body"></ul>
         </div>
@@ -342,6 +369,30 @@
       </div>
     </div>
 
+    <div class="overlay">
+      <div class="overlay__menu">
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#" class="menu__link">Продукты</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Цвета</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Вдохновение</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Советы</a>
+            </li>
+            <li class="menu__item">
+              <a href="#" class="menu__link">Найти магазин</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
     <script src="./js/slider.js"></script>
     <script src="./js/product.js" type="module"></script>
 
@@ -349,5 +400,6 @@
 
     <script src="./js/filter-list.js" type="module"></script>
     <script src="./js/select.js" type="module"></script>
+    <script src="./js/burger.js" type="module"></script>
   </body>
 </html>
