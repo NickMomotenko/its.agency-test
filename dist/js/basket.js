@@ -5,12 +5,13 @@ import {
   clearData,
   deleteFromBusket,
   decrementProduct,
+  generateCorrectTotalText,
 } from "./product.js";
 
 const basket = document.querySelector(".basket");
 const wrapper = document.querySelector(".wrapper");
 
-const basketCounter = document.querySelector(".basket-counter");
+const basketCounter = document.querySelectorAll(".basket-counter");
 
 const basketCrossButton = document.querySelector(".basket__cross-btn");
 const basketContainer = document.querySelector(".basket__list-body");
@@ -54,6 +55,7 @@ function generateBasketList(arr = busketList) {
   }
 
   basketContainer.innerHTML = basketStr;
+  generateCorrectTotalText();
 }
 
 function getTotalPrice() {
@@ -79,7 +81,9 @@ function clearBusket() {
   getTotalPrice();
 }
 
-basketCounter.addEventListener("click", toggleBasketOpen);
+basketCounter.forEach((button) => {
+  button.addEventListener("click", toggleBasketOpen);
+});
 basketCrossButton.addEventListener("click", toggleBasketOpen);
 
 basketContainer.addEventListener("click", (event) => {

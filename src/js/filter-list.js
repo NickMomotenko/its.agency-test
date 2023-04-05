@@ -2,12 +2,23 @@ import { productArr } from "./product.js";
 
 import { generateProductList } from "./product.js";
 
-const filterList = document.querySelector(".filter-list");
-const checkboxList = Array.from(filterList.querySelectorAll(".checkbox__body"));
+import { generateCorrectLabel } from "./helpers.js";
+
+// const filterList = document.querySelector(".filter-list");
+const checkboxList = Array.from(document.querySelectorAll(".checkbox__body"));
+const totalProductCounter = document.querySelector(".product-counter");
 
 let filterResult = [...productArr];
 
 let filterArr = [];
+
+updateTolalProductCounter();
+
+function updateTolalProductCounter() {
+  totalProductCounter.textContent = `${
+    filterResult.length
+  } ${generateCorrectLabel(filterResult.length)}`;
+}
 
 function filterBy(arr) {
   let data = [];
@@ -20,6 +31,8 @@ function filterBy(arr) {
 
   filterResult = [...data];
 
+  updateTolalProductCounter();
+
   generateProductList(filterResult);
 }
 
@@ -31,7 +44,7 @@ function sortBy(filter) {
       );
 
       generateProductList(filterResult);
-
+      updateTolalProductCounter();
       return filterResult;
     }
 
@@ -39,7 +52,7 @@ function sortBy(filter) {
       filterResult.sort((a, b) => Number(a.price) - Number(b.price));
 
       generateProductList(filterResult);
-
+      updateTolalProductCounter();
       return filterResult;
     }
 

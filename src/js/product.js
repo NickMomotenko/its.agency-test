@@ -1,10 +1,14 @@
 import { data } from "./mockData.js";
 
+import { generateCorrectLabel } from "./helpers.js";
+
 let busketList = [];
 let productArr = [...data];
 
 const productContainer = document.querySelector(".product__list");
 const busketCounter = Array.from(document.querySelectorAll(".counter-value"));
+
+const basketCounterValue = document.querySelector(".basket__list-counter");
 
 const generateProductList = (arr = productArr) => {
   let listStr = "";
@@ -36,11 +40,18 @@ const generateProductList = (arr = productArr) => {
   }
 
   productContainer.innerHTML = listStr;
+  generateCorrectTotalText();
 };
 
 generateProductList();
 
 const productList = document.querySelector(".product__list");
+
+function generateCorrectTotalText() {
+  basketCounterValue.textContent = `${getBusketGeneralCounter()} ${generateCorrectLabel(
+    getBusketGeneralCounter()
+  )}`;
+}
 
 function getBusketGeneralCounter() {
   let counter = busketList.reduce(
@@ -62,6 +73,8 @@ function updateBasketData(arg) {
 
       return item;
     });
+
+    generateCorrectTotalText();
   }
 
   if (!isObj) {
@@ -153,4 +166,5 @@ export {
   updateBasketData,
   decrementProduct,
   getBusketGeneralCounter,
+  generateCorrectTotalText,
 };

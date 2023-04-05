@@ -4,11 +4,11 @@
   top: 0;
   height: 100%;
   right: -100%;
-  width: 600px;
+  max-width: 600px;
+  width: 100%;
   background: #fff;
   transition: right 0.5s;
   padding: 28px 40px;
-  display: none;
 
   &.active {
     right: 0;

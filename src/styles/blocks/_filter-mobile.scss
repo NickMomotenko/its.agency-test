@@ -9,6 +9,8 @@
   transition: bottom 0.5s;
   z-index: 2;
 
+  display: none;
+
   padding: 54px 24px 24px;
 
   &::before {
@@ -26,5 +28,11 @@
 
   &.active {
     bottom: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .filter-mobile {
+    display: block;
   }
 }
