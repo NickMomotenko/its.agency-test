@@ -438,7 +438,7 @@ input {
     .basket__cross-btn:before {
       content: "";
       display: inline-block;
-      background: url(../../img/cross.svg);
+      background: url(./img/cross.svg);
       background-size: contain;
       height: 12px;
       width: 12px; }
@@ -527,7 +527,7 @@ input {
       display: inline-block;
       height: 12px;
       width: 12px;
-      background: url(../../img/cross-1.svg) center no-repeat; }
+      background: url(./img/cross-1.svg) center no-repeat; }
     .basket__list-options {
       display: flex;
       align-items: center;
@@ -1125,7 +1125,7 @@ input {
       display: inline-block;
       height: 40px;
       width: 20px;
-      background: url("../../img/slider-arrow.svg") center no-repeat; }
+      background: url("./img/slider-arrow.svg") center no-repeat; }
     .slider__direction-btn--prev::before {
       transform: rotate(180deg); }
 
