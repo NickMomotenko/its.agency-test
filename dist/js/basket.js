@@ -1,24 +1,23 @@
-import {
-  busketList,
-  updateBasketData,
-  updateBasketCounterValue,
-  clearData,
-  deleteFromBusket,
-  decrementProduct,
-  generateCorrectTotalText,
-} from "./product.js";
+import { generateCorrectLabel } from "./helpers.js";
 
 const basket = document.querySelector(".basket");
 const wrapper = document.querySelector(".wrapper");
 
-const basketCounter = document.querySelectorAll(".basket-counter");
+const basketCounter = document.querySelectorAll(".basket-counter"); // две кнопки (кружок с счетсчиком)
 
-const basketCrossButton = document.querySelector(".basket__cross-btn");
-const basketContainer = document.querySelector(".basket__list-body");
-const basketClearData = document.querySelector(".basket__clear-btn");
-const basketOrderButton = document.querySelector(".basket__order-btn");
+const basketCrossButton = document.querySelector(".basket__cross-btn"); // кнопка закрыть корзину
 
-const priceValue = document.querySelector(".basket__total-price");
+const basketContainer = document.querySelector(".basket__list-body"); // сюда рендерим li-шки
+
+const basketClearData = document.querySelector(".basket__clear-btn"); // кнопка очистка корзины
+const basketOrderButton = document.querySelector(".basket__order-btn"); // кнопка оформить
+
+const busketCounter = Array.from(document.querySelectorAll(".counter-value")); // значения в кружках
+const basketCounterValue = document.querySelector(".basket__list-counter"); // значение в корзине
+
+const priceValue = document.querySelector(".basket__total-price"); // общая стоимость в корзине
+
+let busketList = [];
 
 function toggleBasketOpen() {
   wrapper.classList.toggle("active");
@@ -58,6 +57,52 @@ function generateBasketList(arr = busketList) {
   generateCorrectTotalText();
 }
 
+function updateBasketData(arg) {
+  let isObj = typeof arg === "object";
+
+  function update(id) {
+    busketList = busketList.map((item) => {
+      if (item.id === id) {
+        return { ...item, counter: item.counter + 1 };
+      }
+
+      return item;
+    });
+
+    generateCorrectTotalText();
+  }
+
+  if (!isObj) {
+    let product = busketList.find((item) => item.id === arg);
+
+    update(product.id);
+  } else {
+    let product = busketList.find((item) => item.id === arg.id);
+
+    if (product) {
+      update(product.id);
+    } else {
+      busketList = [...busketList, arg];
+    }
+  }
+}
+
+// обновляем все счетсчики
+function updateBasketCounterValue() {
+  for (const counter of busketCounter) {
+    counter.innerText = getBusketGeneralCounter();
+  }
+}
+
+function getBusketGeneralCounter() {
+  let counter = busketList.reduce(
+    (accumulator, item) => accumulator + item.counter,
+    0
+  );
+
+  return counter;
+}
+
 function getTotalPrice() {
   let totalPrice = busketList.reduce(
     (accumulator, item) =>
@@ -68,22 +113,49 @@ function getTotalPrice() {
   priceValue.textContent = totalPrice;
 }
 
+// формируем заказ и чистим корзину
 function order() {
   alert("Ваш заказ оформлен!!");
-  clearData();
+
+  clearBusket();
+}
+
+function clearBusket() {
+  busketList = [];
+  updateBasketCounterValue();
+
   generateBasketList();
   getTotalPrice();
 }
 
-function clearBusket() {
-  clearData();
-  generateBasketList();
-  getTotalPrice();
+function decrementProduct(id) {
+  busketList = busketList.map((product) => {
+    if (product.id === id) {
+      if (product.counter === 1) {
+        return product;
+      }
+
+      return { ...product, counter: product.counter - 1 };
+    }
+
+    return product;
+  });
+}
+
+function deleteFromBusket(id) {
+  busketList = busketList.filter((item) => item.id !== id);
+}
+
+function generateCorrectTotalText() {
+  basketCounterValue.textContent = `${getBusketGeneralCounter()} ${generateCorrectLabel(
+    getBusketGeneralCounter()
+  )}`;
 }
 
 basketCounter.forEach((button) => {
   button.addEventListener("click", toggleBasketOpen);
 });
+
 basketCrossButton.addEventListener("click", toggleBasketOpen);
 
 basketContainer.addEventListener("click", (event) => {
@@ -118,3 +190,13 @@ basketContainer.addEventListener("click", (event) => {
 basketClearData.addEventListener("click", clearBusket);
 
 basketOrderButton.addEventListener("click", order);
+
+export {
+  updateBasketData,
+  busketList,
+  getBusketGeneralCounter,
+  updateBasketCounterValue,
+  decrementProduct,
+  deleteFromBusket,
+  generateCorrectTotalText,
+};

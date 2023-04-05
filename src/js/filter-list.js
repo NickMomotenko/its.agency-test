@@ -1,10 +1,8 @@
-import { productArr } from "./product.js";
-
-import { generateProductList } from "./product.js";
+import { productArr, generateProductList } from "./product.js";
+import { currentSelect } from "./select.js";
 
 import { generateCorrectLabel } from "./helpers.js";
 
-// const filterList = document.querySelector(".filter-list");
 const checkboxList = Array.from(document.querySelectorAll(".checkbox__body"));
 const totalProductCounter = document.querySelector(".product-counter");
 
@@ -33,10 +31,12 @@ function filterBy(arr) {
 
   updateTolalProductCounter();
 
+  sortBy(currentSelect);
+
   generateProductList(filterResult);
 }
 
-function sortBy(filter) {
+function sortBy(filter = "expensive") {
   switch (filter) {
     case "expensive": {
       filterResult = filterResult.sort(
@@ -60,6 +60,8 @@ function sortBy(filter) {
       return;
   }
 }
+
+sortBy(currentSelect);
 
 checkboxList.forEach((checkbox) => {
   const dataAttr = checkbox.dataset.filter;

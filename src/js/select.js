@@ -4,6 +4,8 @@ const select = document.querySelector(".select");
 const selectList = select.querySelector(".select__list");
 const selectPreview = select.querySelector(".select__preview");
 
+let currentSelect = "expensive";
+
 function showSelect() {
   select.classList.add("active");
 }
@@ -28,7 +30,8 @@ selectList.addEventListener("click", (event) => {
     selectPreview.textContent = text;
 
     sortBy(value);
+    currentSelect = value;
   }
 });
 
-export { sortBy };
+export { currentSelect };
