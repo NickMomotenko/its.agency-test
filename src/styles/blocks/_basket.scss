@@ -218,3 +218,37 @@
     }
   }
 }
+
+@media screen and (max-width: 480px) {
+  .basket {
+    padding: 24px;
+
+    &__list {
+      &-item {
+        flex-direction: column;
+      }
+
+      &-data {
+        width: 100%;
+      }
+
+      &-options {
+        align-self: flex-end;
+      }
+    }
+
+    &__order-btn {
+      max-width: 170px;
+    }
+
+    &__total {
+      &-text {
+        font-size: 14px;
+      }
+
+      &-price {
+        font-size: 20px;
+      }
+    }
+  }
+}
